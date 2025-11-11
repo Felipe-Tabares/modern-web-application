@@ -1,18 +1,11 @@
 @page
-@model MyWebApp.Pages_Products.EditModel
+@model MyWebApp.Pages.Products.EditModel
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Edit";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
+<h1>Edit</h1>
 
 <h4>Product</h4>
 <hr />
@@ -28,24 +21,18 @@
                 <span asp-validation-for="Product.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                
                 <label asp-for="Product.Price" class="control-label"></label>
                 <input asp-for="Product.Price" class="form-control" />
                 <span asp-validation-for="Product.Price" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-</body>
-</html>
